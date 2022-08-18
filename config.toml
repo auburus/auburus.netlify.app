@@ -1,0 +1,14 @@
+# Site settings
+baseurl = "/"
+DefaultContentLanguage = "en-us"
+languageCode = "en-us"
+title = "Auburus"
+
+themesDir = "themes"
+theme = "hugo-winston-theme"
+
+disableKinds = [
+  "RSS",
+  "robotsTXT",
+  "sitemap",
+]
