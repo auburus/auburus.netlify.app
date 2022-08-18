@@ -19,8 +19,6 @@ dev:
 
 # Deploy the site
 deploy:
-    just build
-
     curl \
         --fail \
         -H "Content-Type: application/zip" \

@@ -1,4 +1,4 @@
 Personal Blog
 =============
 
-You can find it at [auburs.netlify.com](https://auburus.netlify.com)
+You can find it at [auburus.netlify.app](https://auburus.netlify.app)

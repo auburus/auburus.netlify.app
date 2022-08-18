@@ -1,0 +1,56 @@
+name: Build and deploy static site
+
+on:
+  push:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Just, a nicer alternative to Make
+        uses: extractions/setup-just@v1
+
+      - name: Setup Hugo, the static code generator
+        uses: peaceiris/actions-hugo@v2
+        with:
+          extended: true
+
+      - name: Build
+        run: just build
+
+      - name: Save build result
+        uses: actions/upload-artifact@v3
+        with:
+          name: public.zip
+          path: public.zip
+
+
+  deploy:
+    runs-on: ubuntu-22.04
+    needs: build
+    environment:
+      name: netlify
+      url: auburus.netlify.app
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Just, a nicer alternative to Make
+        uses: extractions/setup-just@v1
+
+      - name: Get build result
+        uses: actions/download-artifact@v3
+        with:
+          name: public.zip
+
+      - name: Deploy
+        run: just deploy
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+
