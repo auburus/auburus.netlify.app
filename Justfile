@@ -14,7 +14,7 @@ build:
 # Start a dev server
 dev:
     xdg-open http://localhost:1313
-    hugo server
+    hugo server -D
     rm -r resources
 
 # Deploy the site
@@ -36,3 +36,6 @@ clean:
         public \
         public.zip \
         resources
+
+new-post NAME:
+    hugo new blog/{{ trim_end_match(NAME, ".md") }}.md
