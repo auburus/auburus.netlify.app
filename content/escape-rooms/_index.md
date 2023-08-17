@@ -3,7 +3,7 @@ title: Escape Rooms
 date: 2023-08-17
 menu:
   main:
-    name: 'Escape Rooms'
+    name: 'Escapes'
 ---
 
 This is my unsorted list of escape rooms done
@@ -36,7 +36,7 @@ This is my unsorted list of escape rooms done
 | La Rebelion linea hibrida                                                                  |                  | 2023-07-11  | Bilbao           |
 | Sleepy Hollow                                                                              |                  | 2023-07-12  | Bilbao           |
 | Petra                                                                                      |                  | 2023-07-13  | Bilbao           |
-| Dragonborn                                                                                 |                  | 2023-07-10  | Vitoria          |
+| Dragonborn El hijo del posadero                                                            |                  | 2023-07-10  | Vitoria          |
 | Transporter                                                                                |                  | 2023-07-14  | Pamplona         |
 | La Desaparicion                                                                            | Game of games    | 2017-12     | Barcelona        |
 | [El misterio de Gaudi](https://escapehunt.com/es/barcelona/games/el-misterio-de-gaudi/)    | Escape Hunt      | 2017?       | Barcelona        |
@@ -51,7 +51,7 @@ This is my unsorted list of escape rooms done
 | Jester                                                                                     | 21 Keys          |             | Colorado Springs |
 | Room 1 a Manitou springs (amb familia random)                                              |                  |             | Colorado Springs |
 | Room 2 a Manitou springs                                                                   |                  |             | Colorado Springs |
-| [Pirates (or something like that)](https://lockedinescapes.com/escape-rooms/)              | Locked In        |             |                  |
+| Pirates (or something like that)                                                           |                  |             |                  |
 | [Rock star - The final Curtain](https://lockedinescapes.com/escape-rooms/)                 | Locked In        |             | Colorado Springs |
 | [Darkness falls](https://lockedinescapes.com/escape-rooms/)                                | Locked In        |             | Colorado Springs |
 | [Mad scientist (or something like that?)](https://lockedinescapes.com/escape-rooms/)       | Locked In        |             | Colorado Springs |
@@ -73,16 +73,14 @@ This is my unsorted list of escape rooms done
 
 Want to go
 
-| Room                      | Location  |
-| ------------------------- | --------- |
-| Narcos                    | Barcelona |
-| La Cerveseria             | Barcelona |
-| La fortuna de los Addams  | Barcelona |
-| Las Maravillas de Agrabah | Barcelona |
-| Olimpo Escape Room        | Barcelona |
-| Alien el Origen           | Barcelona |
-| Velatoria                 | Barcelona |
-| Poison                    | Barcelona |
-|                           | Barcelona |
-|                           | Barcelona |
+| Room                      | Location        | Notes   |
+| ------------------------- | --------------- | ------- |
+| Narcos                    | Hospitalet      |         |
+| La Cerveseria             | Sagrada familia |         |
+| La fortuna de los Addams  | Barcelona       |         |
+| Las Maravillas de Agrabah | Vilapiscina     |         |
+| Olimpo Escape Room        | Badalona        |         |
+| Alien el Origen           | Badalona        | Minim 4 |
+| Velatoria                 | Barcelona       |         |
+| Poison                    | Barcelona       | Minim 4 |
 
