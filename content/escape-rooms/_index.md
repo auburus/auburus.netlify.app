@@ -68,6 +68,7 @@ This is my unsorted list of escape rooms done
 | Heaven & Hell                                                                              |                  | 2022-12-14  | Budapest         |
 | House of Escobar                                                                           |                  | 2022-12-14  | Budapest         |
 | Mission 1899 Sherlock Holmes                                                               |                  | 2023-03-03  | Hyeres           |
+| Olimpo Escape Room                                                                         |                  | 2023-08-19  | Badalona         |
 
 
 
@@ -79,7 +80,6 @@ Want to go
 | La Cerveseria             | Sagrada familia |         |
 | La fortuna de los Addams  | Barcelona       |         |
 | Las Maravillas de Agrabah | Vilapiscina     |         |
-| Olimpo Escape Room        | Badalona        |         |
 | Alien el Origen           | Badalona        | Minim 4 |
 | Velatoria                 | Barcelona       |         |
 | Poison                    | Barcelona       | Minim 4 |
