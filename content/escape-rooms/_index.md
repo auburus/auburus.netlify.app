@@ -100,3 +100,5 @@ The following rooms are still not placed in the general ranking
 | Poison                    | -       | Barcelona   | Minim 4 |
 
 
+# Terpeca Explorer
+{{< escape_room_search json_url="./terpeca-2022.json">}}

@@ -1,0 +1,68 @@
+<!-- Compressed CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous">
+
+<!-- Compressed JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<div id="escape-room-explorer">
+    <table class="table-auto">
+        <thead>
+            <tr>
+               <th style="text-align: left;">TERPECA 2022</th>
+               <th style="text-align: left;">Room Name</th> 
+               <th style="text-align: left;">Terror Level</th>
+               <th style="text-align: left;">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="room in rooms">
+                <td v-if="room.phase2_rank != 'Not ranked'">[[ room.phase2_rank ]]</td>
+                <td v-if="room.phase2_rank == 'Not ranked'"></td>
+                <td>[[ room.room_name_english ]]</td>
+                <td>[[ room.terror_level ]]</td>
+                <td>[[ room.location ]]</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="module">
+  import { createApp, ref } from 'vue'
+
+  const app = createApp({
+    delimiters: ["[[", "]]"],
+    data() {
+      return {
+        rooms: [],
+        // room_name: 'Room 1',
+        // terror_level: "Spooky",
+        // terpeca_ranking: "#1",
+        // location: "Barcelona"
+      }
+    },
+    mounted() {
+        console.log("Attempting to query {{ .Get "json_url" }}");
+
+        const data = fetch("{{ .Get "json_url" }}").then( (response) => {
+            console.log("Query successful, got " + response.status)
+            if (response.status !== 200) {
+                console.log("Error: " + response.status);
+                return;
+            }
+            response.json().then( (data) => {
+                this.rooms = data;
+            });
+        });
+    }
+  });
+  app.mount('#escape-room-explorer')
+  
+</script>
