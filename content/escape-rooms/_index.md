@@ -6,9 +6,7 @@ menu:
     name: 'Escapes'
 ---
 
-This is my list of escape rooms.
-
-They are sorted by how much I enjoyed them.
+This is my list of escape rooms. They are sorted by how much I enjoyed them.
 
 | Room                                                                                       | Company          | Date played | Location         |
 | ------------------------------------------------------------------------------------------ | ---------------- | ----------- | ---------------- |
@@ -16,19 +14,24 @@ They are sorted by how much I enjoyed them.
 | [Cybercity 2049](https://www.escapebarcelona.com/cybercity-2049.php)                       | Escape Barcelona | 2022-10     | Barcelona        |
 | [Tao Room Escape Japanese Massage center](https://virusroomescape.com/ca/jocs/tao-catala/) |                  | 2023-01-15  | Barcelona        |
 | Petra                                                                                      |                  | 2023-07-13  | Bilbao           |
-| [Abduction 3: The Exam](https://www.abduction.es/badalona/abduction3)                      |                  | 2022-10     | Barcelona        |
 | La Rebelion linea hibrida                                                                  |                  | 2023-07-11  | Bilbao           |
-| Evasion del campo 14                                                                       |                  | 2022-08-06  | Barcelona        |
+| [Death row](https://noexit.gr/rooms/death-row-en/)                                         | No Exit          | 2023-09     | Athens           |
+| [Abduction 3: The Exam](https://www.abduction.es/badalona/abduction3)                      |                  | 2022-10     | Barcelona        |
+| The bookstore                                                                              | Paradox 2        | 2023-09     | Athens           |
 | [Abduction 4: Enterprises](https://www.abduction.es/badalona/abduction4)                   |                  | 2022-10     | Barcelona        |
 | Dragonborn El hijo del posadero                                                            |                  | 2023-07-10  | Vitoria          |
+| Evasion del campo 14                                                                       |                  | 2022-08-06  | Barcelona        |
+| Wanted: Dead or Alive                                                                      | No Exit          | 2023-09     | Athens           |
 | Crupier                                                                                    |                  |             | Barcelona        |
 | Cronologic 1 La Creacion                                                                   | Cronologic       | 2021-05-21  | Barcelona        |
-| Distrito 111                                                                               |                  | 2023-08-12  | Barcelona        |
 | [Cazadores de Brujas](https://www.synergoescaperoom.es/historia/index.html)                | Synergo          | 2022-11-19  | Barcelona        |
+| Ice Tiki                                                                                   | Way Out          | 2023-09     | Athens           |
 | [Cetro de fuego](https://www.elementsescaperoom.com/el-cetro-de-fuego/)                    | Elements         |             | Barcelona        |
+| La Cerveseria                                                                              | Enigmik          | 2023-10     | Barcelona        |
 | Transporter                                                                                |                  | 2023-07-14  | Pamplona         |
-| [Futura](https://futuraescape.com/)                                                        |                  | 2023-01-14  | Barcelona        |
+| Distrito 111                                                                               |                  | 2023-08-12  | Barcelona        |
 | Lanzadera Alien                                                                            | Unreal           |             | Barcelona        |
+| [Futura](https://futuraescape.com/)                                                        |                  | 2023-01-14  | Barcelona        |
 | Heaven & Hell                                                                              |                  | 2022-12-14  | Budapest         |
 | Mision europa                                                                              |                  | 2023-05-21  | Barcelona        |
 | Olimpo Escape Room                                                                         |                  | 2023-08-19  | Badalona         |
@@ -44,6 +47,7 @@ They are sorted by how much I enjoyed them.
 | [Bajo zero](https://www.elementsescaperoom.com/bajo-zero/)                                 | Elements         | 2023-03-19  | Barcelona        |
 | [Atrincherados](https://www.elementsescaperoom.com/atrincherados/)                         | Elements         | 2022-09-25  | Barcelona        |
 | House of Escobar                                                                           |                  | 2022-12-14  | Budapest         |
+| Lilipout                                                                                   |                  | 2023-09     | Athens           |
 | Mission 1899 Sherlock Holmes                                                               |                  | 2023-03-03  | Hyeres           |
 | [Jurassic Land](https://www.escapebarcelona.com/jurassic-land.php)                         | Escape Barcelona | 2021-07-21  | Barcelona        |
 | La Mussara                                                                                 |                  | 2021-10-11  | Reus             |
@@ -69,29 +73,30 @@ They are sorted by how much I enjoyed them.
 # Unsorted
 The following rooms are still not placed in the general ranking
 
-| Room                                                                                       | Company          | Date played | Location         |
-| ------------------------------------------------------------------------------------------ | ---------------- | ----------- | ---------------- |
-| Room 1 a Manitou springs (amb familia random)                                              |                  |             | Colorado Springs |
-| Room 2 a Manitou springs                                                                   |                  |             | Colorado Springs |
-| [Darkness falls](https://lockedinescapes.com/escape-rooms/)                                | Locked In        |             | Colorado Springs |
-| [Mad scientist (or something like that?)](https://lockedinescapes.com/escape-rooms/)       | Locked In        |             | Colorado Springs |
-| [Cell block E](https://lockedinescapes.com/escape-rooms/)                                  | Locked In        |             | Colorado Springs |
-| Room 1 amb Vlasse                                                                          |                  | 2022-04     | Denver           |
-| Room 2 amb Vlasse                                                                          |                  | 2022-04     | Denver           |
-| The storyteller                                                                            |                  | 2022-12     | Boston           |
+| Room                                                                                 | Company   | Date played | Location         |
+| ------------------------------------------------------------------------------------ | --------- | ----------- | ---------------- |
+| Room 1 a Manitou springs (amb familia random)                                        |           |             | Colorado Springs |
+| Room 2 a Manitou springs                                                             |           |             | Colorado Springs |
+| [Darkness falls](https://lockedinescapes.com/escape-rooms/)                          | Locked In |             | Colorado Springs |
+| [Mad scientist (or something like that?)](https://lockedinescapes.com/escape-rooms/) | Locked In |             | Colorado Springs |
+| [Cell block E](https://lockedinescapes.com/escape-rooms/)                            | Locked In |             | Colorado Springs |
+| Room 1 amb Vlasse                                                                    |           | 2022-04     | Denver           |
+| Room 2 amb Vlasse                                                                    |           | 2022-04     | Denver           |
+| The storyteller                                                                      |           | 2022-12     | Boston           |
+| Paradox 2: The mansion                                                               |           | 2023-09     | Athens           |
+| Paradox 2: The music academy                                                         |           | 2023-09     | Athens           |
 
 
 
+# Next in the list
 
-Want to go
+| Room                      | Company | Location    | Notes   |
+| ------------------------- | ------- | ----------- | ------- |
+| Narcos                    | -       | Hospitalet  |         |
+| La fortuna de los Addams  | -       | Barcelona   |         |
+| Las Maravillas de Agrabah | -       | Vilapiscina |         |
+| Alien el Origen           | -       | Badalona    | Minim 4 |
+| Velatoria                 | -       | Barcelona   |         |
+| Poison                    | -       | Barcelona   | Minim 4 |
 
-| Room                      | Location        | Notes   |
-| ------------------------- | --------------- | ------- |
-| Narcos                    | Hospitalet      |         |
-| La Cerveseria             | Sagrada familia |         |
-| La fortuna de los Addams  | Barcelona       |         |
-| Las Maravillas de Agrabah | Vilapiscina     |         |
-| Alien el Origen           | Badalona        | Minim 4 |
-| Velatoria                 | Barcelona       |         |
-| Poison                    | Barcelona       | Minim 4 |
 
