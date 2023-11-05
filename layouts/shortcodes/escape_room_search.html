@@ -1,9 +1,7 @@
-<!-- Compressed CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous">
-
-<!-- Compressed JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js" crossorigin="anonymous"></script>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script type="importmap">
   {
     "imports": {
@@ -13,56 +11,128 @@
 </script>
 
 <div id="escape-room-explorer">
-    <table class="table-auto">
-        <thead>
-            <tr>
-               <th style="text-align: left;">TERPECA 2022</th>
-               <th style="text-align: left;">Room Name</th> 
-               <th style="text-align: left;">Terror Level</th>
-               <th style="text-align: left;">Location</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="room in rooms">
-                <td v-if="room.phase2_rank != 'Not ranked'">[[ room.phase2_rank ]]</td>
-                <td v-if="room.phase2_rank == 'Not ranked'"></td>
-                <td>[[ room.room_name_english ]]</td>
-                <td>[[ room.terror_level ]]</td>
-                <td>[[ room.location ]]</td>
-            </tr>
-        </tbody>
-    </table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="text-align: left;">TERPECA 2022</th>
+        <th style="text-align: left;">Room Name</th>
+        <th style="text-align: left;">Company Name</th>
+        <th style="text-align: left; width: 200px;">
+          <span class="dropdown-toggle" role="button" href="#" data-bs-toggle="collapse"
+            data-bs-target="#terrorLevelFilters">Terror Level</span>
+          <div class="collapse" id="terrorLevelFilters">
+            <div class="form-check">
+              <input id="terrorLevelCheck" type="checkbox" class="form-check-input" v-model="terror_level.none" />
+              <label class="form-check-label" for="terrorLevelCheck">None</label>
+            </div>
+            <div class="form-check">
+              <input id="terrorLevelCheck" type="checkbox" class="form-check-input" v-model="terror_level.spooky" />
+              <label class="form-check-label" for="terrorLevelCheck">Spooky</label>
+            </div>
+            <div class="form-check">
+              <input id="terrorLevelCheck" type="checkbox" class="form-check-input"
+                v-model="terror_level.passively_scary" />
+              <label class="form-check-label" for="terrorLevelCheck">Passively Scary</label>
+            </div>
+            <div class="form-check">
+              <input id="terrorLevelCheck" type="checkbox" class="form-check-input"
+                v-model="terror_level.actively_scary" />
+              <label class="form-check-label" for="terrorLevelCheck">Actively Scary</label>
+            </div>
+          </div>
+        </th>
+        <th style="text-align: left;">
+          Location
+          <input id="input-location" type="text" v-model="location_text_filter" />
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="room in visibleRooms">
+        <td v-if="room.phase2_rank != 'Not ranked'">[[ room.phase2_rank ]]</td>
+        <td v-if="room.phase2_rank == 'Not ranked'"></td>
+        <td>[[ room.room_name_english ]]</td>
+        <td>[[ room.company_name ]]</td>
+        <td>[[ room.terror_level ]]</td>
+        <td>[[ room.location ]]</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
 <script type="module">
   import { createApp, ref } from 'vue'
+
+  function normalize_ranking(ranking) {
+    if (ranking === "Not ranked") {
+      return 1000;
+    }
+    if (ranking === "NR") {
+      return 1000;
+    }
+    return parseInt(ranking)
+  }
 
   const app = createApp({
     delimiters: ["[[", "]]"],
     data() {
       return {
         rooms: [],
-        // room_name: 'Room 1',
-        // terror_level: "Spooky",
-        // terpeca_ranking: "#1",
-        // location: "Barcelona"
+        location_text_filter: "",
+        terror_level: {
+          none: true,
+          spooky: true,
+          passively_scary: true,
+          actively_scary: true
+        }
       }
     },
-    mounted() {
-        console.log("Attempting to query {{ .Get "json_url" }}");
+    computed: {
+      visibleRooms() {
 
-        const data = fetch("{{ .Get "json_url" }}").then( (response) => {
-            console.log("Query successful, got " + response.status)
-            if (response.status !== 200) {
-                console.log("Error: " + response.status);
-                return;
-            }
-            response.json().then( (data) => {
-                this.rooms = data;
-            });
+        self = this;
+        function isTerrorLevelVisible(terror_level) {
+          if (terror_level.toLowerCase() === "none" && self.terror_level.none === true) {
+            return true;
+          }
+          if (terror_level.toLowerCase() === "spooky" && self.terror_level.spooky === true) {
+            return true;
+          }
+          if (terror_level.toLowerCase() === "passively scary" && self.terror_level.passively_scary === true) {
+            return true;
+          }
+          if (terror_level.toLowerCase() === "actively scary" && self.terror_level.actively_scary === true) {
+            return true;
+          }
+          return false;
+        }
+
+        return this.rooms
+          .filter((room) => room.location.toLowerCase().includes(this.location_text_filter.toLowerCase()))
+          .filter((room) => isTerrorLevelVisible(room.terror_level));
+      }
+    },
+    methods: {
+      sort_by(event) {
+        alert("hello " + event.target.tagName)
+      },
+    },
+    mounted() {
+      console.log("Attempting to query {{ .Get "json_url" }}");
+
+      const data = fetch("{{ .Get "json_url" }}").then((response) => {
+        console.log("Query successful, got " + response.status)
+        if (response.status !== 200) {
+          console.log("Error: " + response.status);
+          return;
+        }
+        response.json().then((data) => {
+          this.rooms = data.sort((room1, room2) => {
+            return normalize_ranking(room1.phase2_rank) > normalize_ranking(room2.phase2_rank);
+          });
         });
+      });
     }
   });
   app.mount('#escape-room-explorer')
-  
+
 </script>
