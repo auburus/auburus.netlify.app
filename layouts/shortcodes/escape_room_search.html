@@ -26,7 +26,8 @@
               <label class="form-check-label" for="terrorLevelNoneCheck">None</label>
             </div>
             <div class="form-check">
-              <input id="terrorLevelSpookyCheck" type="checkbox" class="form-check-input" v-model="terror_level.spooky" />
+              <input id="terrorLevelSpookyCheck" type="checkbox" class="form-check-input"
+                v-model="terror_level.spooky" />
               <label class="form-check-label" for="terrorLevelSpookyCheck">Spooky</label>
             </div>
             <div class="form-check">
@@ -61,16 +62,6 @@
 </div>
 <script type="module">
   import { createApp, ref } from 'vue'
-
-  function normalize_ranking(ranking) {
-    if (ranking === "Not ranked") {
-      return 1000;
-    }
-    if (ranking === "NR") {
-      return 1000;
-    }
-    return parseInt(ranking)
-  }
 
   const app = createApp({
     delimiters: ["[[", "]]"],
@@ -117,17 +108,26 @@
       },
     },
     mounted() {
-      console.log("Attempting to query {{ .Get "json_url" }}");
+      function normalize_ranking(ranking) {
+        if (ranking === "Not ranked") {
+          return 1000;
+        }
+        if (ranking === "NR") {
+          return 999;
+        }
+        return parseInt(ranking)
+      }
 
       const data = fetch("{{ .Get "json_url" }}").then((response) => {
         console.log("Query successful, got " + response.status)
         if (response.status !== 200) {
+          console.log("Attempting to query {{ .Get "json_url" }}");
           console.log("Error: " + response.status);
           return;
         }
         response.json().then((data) => {
           this.rooms = data.sort((room1, room2) => {
-            return normalize_ranking(room1.phase2_rank) > normalize_ranking(room2.phase2_rank);
+            return normalize_ranking(room1.phase2_rank) - normalize_ranking(room2.phase2_rank);
           });
         });
       });
