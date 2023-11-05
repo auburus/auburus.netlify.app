@@ -22,22 +22,22 @@
             data-bs-target="#terrorLevelFilters">Terror Level</span>
           <div class="collapse" id="terrorLevelFilters">
             <div class="form-check">
-              <input id="terrorLevelCheck" type="checkbox" class="form-check-input" v-model="terror_level.none" />
-              <label class="form-check-label" for="terrorLevelCheck">None</label>
+              <input id="terrorLevelNoneCheck" type="checkbox" class="form-check-input" v-model="terror_level.none" />
+              <label class="form-check-label" for="terrorLevelNoneCheck">None</label>
             </div>
             <div class="form-check">
-              <input id="terrorLevelCheck" type="checkbox" class="form-check-input" v-model="terror_level.spooky" />
-              <label class="form-check-label" for="terrorLevelCheck">Spooky</label>
+              <input id="terrorLevelSpookyCheck" type="checkbox" class="form-check-input" v-model="terror_level.spooky" />
+              <label class="form-check-label" for="terrorLevelSpookyCheck">Spooky</label>
             </div>
             <div class="form-check">
-              <input id="terrorLevelCheck" type="checkbox" class="form-check-input"
+              <input id="terrorLevelPassivelyScaryCheck" type="checkbox" class="form-check-input"
                 v-model="terror_level.passively_scary" />
-              <label class="form-check-label" for="terrorLevelCheck">Passively Scary</label>
+              <label class="form-check-label" for="terrorLevelPassivelyScaryCheck">Passively Scary</label>
             </div>
             <div class="form-check">
-              <input id="terrorLevelCheck" type="checkbox" class="form-check-input"
+              <input id="terrorLevelActivelyScaryCheck" type="checkbox" class="form-check-input"
                 v-model="terror_level.actively_scary" />
-              <label class="form-check-label" for="terrorLevelCheck">Actively Scary</label>
+              <label class="form-check-label" for="terrorLevelActivelyScaryCheck">Actively Scary</label>
             </div>
           </div>
         </th>
