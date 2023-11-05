@@ -10,7 +10,7 @@
   }
 </script>
 
-<div id="escape-room-explorer">
+<div id="escape-room-explorer" class="d-none">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -129,6 +129,7 @@
           this.rooms = data.sort((room1, room2) => {
             return normalize_ranking(room1.phase2_rank) - normalize_ranking(room2.phase2_rank);
           });
+          document.getElementById("escape-room-explorer").classList.remove("d-none");
         });
       });
     }
