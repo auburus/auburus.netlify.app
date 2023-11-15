@@ -11,7 +11,7 @@
   <table class="table-auto">
     <thead>
       <tr>
-        <th style="text-align: left;">TERPECA 2022</th>
+        <th style="text-align: left;">TERPECA 2022 (Nominations)</th>
         <th style="text-align: left;">Room Name</th>
         <th style="text-align: left;">Company Name</th>
         <th style="text-align: left; width: 200px;">
@@ -56,8 +56,8 @@
     </thead>
     <tbody>
       <tr v-for="room in visibleRooms" class="odd:bg-gray-50">
-        <td v-if="room.phase2_rank != 'Not ranked'">[[ room.phase2_rank ]]</td>
-        <td v-if="room.phase2_rank == 'Not ranked'"></td>
+        <td v-if="room.phase2_rank != 'Not ranked'">[[ room.phase2_rank ]] ([[ room.phase1_nominations]])</td>
+        <td v-if="room.phase2_rank == 'Not ranked'">- ([[ room.phase1_nominations]])</td>
         <td>[[ room.room_name_english ]]</td>
         <td>[[ room.company_name ]]</td>
         <td>[[ room.terror_level ]]</td>
