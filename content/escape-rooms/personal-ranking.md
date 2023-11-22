@@ -15,6 +15,7 @@ This is my list of escape rooms. They are sorted by how much I enjoyed them.
 | [Death row](https://noexit.gr/rooms/death-row-en/)                                         | No Exit          | 2023-09     | Athens           |
 | [Abduction 3: The Exam](https://www.abduction.es/badalona/abduction3)                      |                  | 2022-10     | Barcelona        |
 | The bookstore                                                                              | Paradox 2        | 2023-09     | Athens           |
+| El Sastre                                                                                  | Locktopus        | 2023-11     | Madrid           |
 | [Abduction 4: Enterprises](https://www.abduction.es/badalona/abduction4)                   |                  | 2022-10     | Barcelona        |
 | Dragonborn El hijo del posadero                                                            |                  | 2023-07-10  | Vitoria          |
 | Evasion del campo 14                                                                       |                  | 2022-08-06  | Barcelona        |
