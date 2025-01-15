@@ -1,5 +1,5 @@
 ---
-title: "Running IO tasks concurrently in python"
+title: "AsyncIO pool in python"
 date: 2024-12-02T21:00:00+02:00
 draft: false
 ---
@@ -30,11 +30,10 @@ if __name__ == "__main__":
 ```
 
 This code, at an average of 0.5s per repo, takes almost a minute for 100 repositories!
-When that reaches several minutes, it becomes time to start processing things concurrently, and luckly python's asyncIO module
-fits this use case perfectly. 
+We can obviously do better than that, even with python and the GIL.
 
-My first attempt at this was just plain wrong, but it was based on the idea that I should be able to
-create all the tasks and `asyncio.gather` them, and in theory that would just run things concurrently (GIL permitting).
+My first attempt at this was just plain **wrong**, but it was based on the idea that I should be able to
+create all the tasks and `asyncio.gather` them, and in theory that would just run things concurrently.
 
 ```python
 import asyncio
