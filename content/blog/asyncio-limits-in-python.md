@@ -4,11 +4,11 @@ date: 2025-03-18T00:00:00+00:00
 draft: false
 ---
 
-A common problem when using asynIO's capabilities is that there is no backpressure,
+A common problem when using asyncIO's capabilities is that there is no back pressure,
 so there is the risk of completely saturating an external service, like a 3rd party API.
 
 See the following example of such an issue, where we are automatically enabling a
-CoolNewFeature (TM) for our premium users.
+CoolNewFeature™ for our premium users.
 
 ```python
 import asyncio
@@ -39,7 +39,7 @@ About 2 minutes later, we'll be googling what exactly "429 Too Many Requests" me
 and why is the API returning that.
 
 That happens because this code fires an HTTP request for each premium user as quick as possible,
-and only after having started all those request doest it go back and checks the responses.
+and only after having started all those requests does it go back and checks the responses.
 
 
 ### Solution
@@ -81,7 +81,7 @@ if __name__ == "__main__":
 
 The important bit here is that all the tasks must receive the __same__ semaphore object.
 
-The code still starts all tasks "concurrenly", but in this case only the first 5
+The code still starts all tasks "concurrently", but in this case only the first 5
 will actually start doing any work. When is the turn of the rest of the tasks
 will wake up, check if there is any slot available in the semaphore, and
 claim it and start working if there is, or keep waiting otherwise.
