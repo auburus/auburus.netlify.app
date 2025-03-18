@@ -47,7 +47,7 @@ and only after having started all those request doest it go back and checks the 
 A quick and nasty way to prevent the previous problem is to limit the amount of
 "unfinished requests" to a reasonable number, and we can use asyncIO's **semaphore** for that.
 
-```python {hl_lines=[6,14,15]}
+```python {hl_lines=[6,14,15,19]}
 import asyncio
 import httpx
 
