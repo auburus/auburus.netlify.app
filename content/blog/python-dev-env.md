@@ -1,19 +1,84 @@
 ---
-title: "Opinionated python project"
+title: "How I lik emy repositories set up as a polyglot"
 date: 2025-01-15T16:25:07+01:00
 draft: true
 ---
 
-I like the following things in a python project, assuming a team perspective.
-We all know life is much easier as a solo dev :)
+As part of my team we have to maintain many repositories. Originally we've tried a monorepo,
+and we needed to create so much tooling ourselves to maintain it properly that we switched back to polyrepo
+(TODO: Link to the blog artictle).
+
+As a result, the following workflow/pattern makes our team's life easier when switching from repo to repo.
+
+1. `make` as the repo API with the programmer.
+2. [mise](https://mise.jdx.dev) to manage dependencies.
+3. [poetry](https://python-poetry.org) to manage python-dependencies.
 
 
-- A Makefile for the API with the programmer
-- Mise/aqua for managing non-python dependencies
-- Sensible pyproject.toml with python folder structure
+# 1. `make` as the repo API with the programmer
+
+I have a baseline template for a `Makefile`, so when I just switch to a repository and run `make`, it
+pops up the `help` target:
+
+```
+$ make
+Available commands:
+  help     Show this help
+  setenv   Setup dev environment
+  clean    Clean
+  format   Format
+  test     Test
+```
+
+Which immediately helps knowing what needs to be run. Some repositories may have some more tasks, but the more
+consistent you are on _which_ tasks are generally available, the better this pattern feels.
+
+We can achieve this behavior by adding the following code as the first target in the Makefile ([source](https://stackoverflow.com/a/35730928)).
+
+```Makefile
+.PHONY: help
+# Show this help
+help:
+        @echo "Available commands:"
+        @awk '/^#/{c=substr($$0,3);next}c&&/^[[:alpha:]][[:alnum:]_-]+:/{print substr($$1,1,index($$1,":")),c}1{c=0}' $(MAKEFILE_LIST) \
+        | column -s: -t \
+        | xargs -I{} printf "  {}\n"
+```
 
 
-# Makefile
+
+```Makefile
+export PATH := ...:$(PATH)
+
+.PHONY: help
+# Show this help
+help:
+        @echo "Available commands:"
+        @awk '/^#/{c=substr($$0,3);next}c&&/^[[:alpha:]][[:alnum:]_-]+:/{print substr($$1,1,index($$1,":")),c}1{c=0}' $(MAKEFILE_LIST) \
+        | column -s: -t \
+        | xargs -I{} printf "  {}\n"
+
+.PHONY: setenv
+# Setup dev environment
+setenv:
+    ...
+
+
+.PHONY: clean
+# Clean
+clean:
+    ...
+
+.PHONY: format
+# Format
+format:
+    ...
+
+.PHONY: test
+# Test
+test:
+    ...
+```
 
 ```Makefile
 
@@ -24,7 +89,7 @@ export PATH := $(CURDIR)/.venv/bin:$(HOME)/.local/share/mise/shims:$(PATH)
 # Show this help
 help:
     @echo "Available commands:"
-    @awk '/^#/{c=substr($$0,3);next}c&&/^[[:alpha:]]{{:alnum"]_-]+:/{print substr($$1,1,indext($$1,":")),c}1{c=0}' $(MAKEFILE_LIST) \
+    @awk '/^#/{c=substr($$0,3);next}c&&/^[[:alpha:]][[:alnum:]_-]+:/{print substr($$1,1,index($$1,":")),c}1{c=0}' $(MAKEFILE_LIST) | column -s: -t
     | column -s: -t \
     | xargs -I{} printf "  {}\n"
 
